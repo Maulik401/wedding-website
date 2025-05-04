@@ -40,9 +40,8 @@ st.image(
 # --- SCHEDULE ---
 st.header("Schedule")
 st.write("""
-- **Wedding Ceremony**: June 2, 2025 @ 11:00 AM  
-- **Reception**: June 2, 2025 @ 7:00 PM  
-- **Location**: Ahmedabad, Gujarat
+- **Wedding Ceremony**: June 2, 2025 @ 9:00 AM   
+- **Location**: Veraval, Gujarat
 """)
 
 # --- VENUE MAP ---
