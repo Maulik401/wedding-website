@@ -29,6 +29,8 @@ for year, event in timeline:
 st.header("Photo Gallery")
 st.image(
     [
+        "photos/photo1.jpg",
+        "photos/photo1.jpg",
         "photos/photo1.jpg"
     ],
     width=300,
