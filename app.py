@@ -48,7 +48,7 @@ st.write("""
 st.header("Venue Location")
 st.components.v1.html("""
 <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.5794784045016!2d70.36644287504104!3d20.90878848076268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be2a46bdbb3a9df%3A0x1e3d9b3486375901!2sVisawadia%20Vadi%2C%20Veraval%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1714826138056!5m2!1sen!2sin"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.5438938326037!2d70.36196187504106!3d20.910310180761913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be2a46b18ebc30b%3A0x47018f5d3a1a59f1!2sW989%2B8P5%2C%20Station%20Rd%2C%20Rayon%20Housing%20Society%2C%20Jobanpura%2C%20Veraval%2C%20Gujarat%20362265%2C%20India!5e0!3m2!1sen!2sin!4v1714827309421!5m2!1sen!2sin"
   width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
 </iframe>
 """, height=400)
