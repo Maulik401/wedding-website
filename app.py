@@ -17,10 +17,10 @@ st.markdown(f"### Countdown: {days_left} days to go!")
 # --- LOVE STORY TIMELINE ---
 st.header("Our Love Story")
 timeline = [
-    ("2018", "👀 We met for the first time — a simple hello turned into endless conversations."),
-    ("2019", "❤️ We started dating — our bond grew stronger with every passing day."),
-    ("2021", "💍 We got engaged — surrounded by love, family, and a thousand happy tears."),
-    ("2025", "💒 We're getting married — and you're invited to be part of it!")
+    ("2024 - Nov", "👀 We met for the first time — a simple hello turned into endless conversations."),
+    ("2025 - June", "❤️ We started dating — our bond grew stronger with every passing day."),
+    ("2025 - May", "💍 We got engaged — surrounded by love, family, and a thousand happy tears."),
+    ("2025 - June 2nd", "💒 We're getting married — and you're invited to be part of it!")
 ]
 for year, event in timeline:
     st.markdown(f"**{year}**  \n{event}")
@@ -49,8 +49,7 @@ st.write("""
 st.header("Venue Location")
 st.components.v1.html("""
 <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.538664777448!2d72.571362!3d23.030357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f2aafeabe1%3A0x9e4e4099b1a3e8f7!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1713623200000!5m2!1sen!2sin"
-  width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+  src="Visawadia Ni Vandi, W989+8P5, Station Rd, Rayon Housing Society, Jobanpura, Veraval, Gujarat 362265, India">
 </iframe>
 """, height=400)
 
