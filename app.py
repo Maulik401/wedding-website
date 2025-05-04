@@ -53,6 +53,13 @@ st.components.v1.html("""
 </iframe>
 """, height=400)
 
+# Directions button (clickable)
+st.markdown("### 📍 Want Directions?")
+st.markdown(
+    "[🧭 Click here to open in Google Maps and get directions](https://www.google.com/maps/dir/?api=1&destination=Visawadia+Ni+Vandi,+W989%2B8P5,+Station+Rd,+Rayon+Housing+Society,+Jobanpura,+Veraval,+Gujarat+362265,+India)",
+    unsafe_allow_html=True
+)
+
 # --- RSVP FORM (No backend, just a thank-you message) ---
 st.header("RSVP")
 name = st.text_input("Your Name")
