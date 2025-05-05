@@ -210,4 +210,4 @@ st.video("https://www.youtube.com/watch?v=-BI7m-S-TuY")  # Example: popular garb
 
 # --- Footer ---
 st.markdown("---")
-st.caption("🌸 With love, Maulik & Riddhi | Made with ❤️ in Gujarat 🌸")
+st.caption("🌸 With love, Maulik & Riddhi | Made with ❤️ in Gujarat & Chicago 🌸")
