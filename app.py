@@ -70,6 +70,18 @@ st.markdown(f"""
             pointer-events: none;
         }}
 
+        /* Custom Section Header */
+        .custom-section-header {{
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', sans-serif;
+            color: #c2185b; /* Magenta color */
+            text-shadow: 2px 2px 4px #ffe0f0;
+            margin-top: 2rem;
+            margin-bottom: 1.2rem;
+        }}
+
         /* Title */
         .custom-title {{
             text-align: center;
@@ -120,8 +132,6 @@ st.markdown(f"""
     </style>
 """, unsafe_allow_html=True)
 
-
-
 # --- Title and Countdown Section (Centered and Styled) ---
 st.markdown("<div class='custom-title'>Maulik & Riddhi</div>", unsafe_allow_html=True)
 st.markdown("<div class='custom-subheader'>We're Getting Married!</div>", unsafe_allow_html=True)
@@ -132,10 +142,8 @@ wedding_date = datetime(2025, 6, 2)
 days_left = (wedding_date - datetime.now()).days
 st.markdown(f"<div class='countdown-text'>⏳ Countdown: {days_left} days to go!</div>", unsafe_allow_html=True)
 
-
-
 # --- Love Story Timeline ---
-st.header("Our Love Story")
+st.markdown("<div class='custom-section-header'>Our Love Story</div>", unsafe_allow_html=True)
 timeline = [
     ("2024 - Nov", "👀 We met for the first time — a simple hello turned into endless conversations."),
     ("2025 - June", "❤️ We started dating — our bond grew stronger with every passing day."),
@@ -146,7 +154,7 @@ for year, event in timeline:
     st.markdown(f"**{year}**  \n{event}")
 
 # --- Photo Gallery ---
-st.header("Photo Gallery")
+st.markdown("<div class='custom-section-header'>Photo Gallery</div>", unsafe_allow_html=True)
 st.image(
     [
         "photos/photo1.jpg",
@@ -158,14 +166,14 @@ st.image(
 )
 
 # --- Schedule ---
-st.header("Schedule")
+st.markdown("<div class='custom-section-header'>Schedule</div>", unsafe_allow_html=True)
 st.write("""
 - **Wedding Ceremony**: June 2, 2025 @ 9:00 AM  
 - **Location**: Veraval, Gujarat
 """)
 
 # --- Venue Map ---
-st.header("Venue Location")
+st.markdown("<div class='custom-section-header'>Venue Location</div>", unsafe_allow_html=True)
 st.components.v1.html("""
 <iframe
   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.5438938326037!2d70.36196187504106!3d20.910310180761913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be2a46b18ebc30b%3A0x47018f5d3a1a59f1!2sW989%2B8P5%2C%20Station%20Rd%2C%20Rayon%20Housing%20Society%2C%20Jobanpura%2C%20Veraval%2C%20Gujarat%20362265%2C%20India!5e0!3m2!1sen!2sin!4v1714827309421!5m2!1sen!2sin"
@@ -174,14 +182,14 @@ st.components.v1.html("""
 """, height=400)
 
 # Directions button (clickable)
-st.markdown("### 📍 Want Directions?")
+st.markdown("<div class='custom-section-header'>📍 Want Directions?</div>", unsafe_allow_html=True)
 st.markdown(
     "[🧭 Click here to open in Google Maps and get directions](https://www.google.com/maps/dir/?api=1&destination=Visawadia+Ni+Vandi,+W989%2B8P5,+Station+Rd,+Rayon+Housing+Society,+Jobanpura,+Veraval,+Gujarat+362265,+India)",
     unsafe_allow_html=True
 )
 
 # --- RSVP FORM (No backend, just a thank-you message) ---
-st.header("RSVP")
+st.markdown("<div class='custom-section-header'>RSVP</div>", unsafe_allow_html=True)
 name = st.text_input("Your Name")
 guests = st.number_input("Guests (including you)", min_value=1, max_value=10)
 attending = st.radio("Will you attend?", ["Yes", "No", "Maybe"])
@@ -193,69 +201,9 @@ if st.button("Submit RSVP"):
         st.warning("Please enter your name.")
 
 # --- YouTube Video for Garba ---
-st.header("🎶 Let's Celebrate with Garba Vibes!")
+st.markdown("<div class='custom-section-header'>🎶 Let's Celebrate with Garba Vibes!</div>", unsafe_allow_html=True)
 st.video("https://www.youtube.com/watch?v=-BI7m-S-TuY")  # Example: popular garba song
 
 # --- Footer ---
 st.markdown("---")
 st.caption("🌸 With love, Maulik & Riddhi | Made with ❤️ in Gujarat 🌸")
-
-# --- Add Background and Corner Images ---
-st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background-image: url("data:image/jpg;base64,{bg_image}");  /* Background Image */
-        background-size: cover;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-position: top center;  /* Adjusting position to show the upper part of the image */
-        padding-top: 140px;
-    }}
-
-    .relative-container {{
-        position: relative;
-    }}
-
-    .corner-img {{
-        position: absolute;
-        width: 80px;
-        z-index: 10;
-        opacity: 0.9;
-        pointer-events: none;
-    }}
-
-    .left-img {{
-        top: 0;
-        left: 0;
-    }}
-
-    .right-img {{
-        top: 0;
-        right: 0;
-    }}
-
-    .center-img {{
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        z-index: 5;
-        opacity: 0.9;
-        pointer-events: none;
-    }}
-
-    @media (max-width: 768px) {{
-        .corner-img {{
-            width: 50px;
-        }}
-
-        .center-img {{
-            width: 80px;
-        }}
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
