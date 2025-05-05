@@ -136,6 +136,8 @@ st.markdown(f"""
 st.markdown("<div class='custom-title'>Maulik & Riddhi</div>", unsafe_allow_html=True)
 st.markdown("<div class='custom-subheader'>We're Getting Married!</div>", unsafe_allow_html=True)
 st.markdown("<div class='custom-save'>Save the Date: June 2, 2025</div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align: center; font-size: 1.5rem; color: #6a1b9a; font-weight: bold; margin-top: 10px;'>💠 #MaulikWedsRiddhi 💠</div>", unsafe_allow_html=True)
+
 
 # --- Countdown ---
 wedding_date = datetime(2025, 6, 2)
