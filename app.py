@@ -4,27 +4,53 @@ from datetime import datetime
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Maulik & Riddhi's Wedding", page_icon="💍", layout="centered")
 
-# --- BACKGROUND COLOR (via CSS) ---
+# --- CUSTOM CSS FOR BACKGROUND & DRUMS ---
 st.markdown("""
     <style>
     .stApp {
-        background-color: #fff8f0;
+        background-image: url("https://i.ibb.co/F8tCcfy/drum-pattern-bg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
         font-family: 'Segoe UI', sans-serif;
+        color: #2e1e0f;
     }
-    .center {
+
+    .corner-image {
+        position: fixed;
+        width: 100px;
+        z-index: 1;
+    }
+
+    .top-left {
+        top: 10px;
+        left: 10px;
+    }
+
+    .top-right {
+        top: 10px;
+        right: 10px;
+    }
+
+    .center-image {
         display: flex;
         justify-content: center;
-        margin-top: -30px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        margin-top: -20px;
     }
     </style>
+
+    <img src="https://i.ibb.co/x67ZCmJ/drum-left.png" class="corner-image top-left">
+    <img src="https://i.ibb.co/Nj0JvYR/drum-right.png" class="corner-image top-right">
 """, unsafe_allow_html=True)
 
-# --- HEADER & GANESHJI IMAGE ---
-st.markdown('<div class="center">', unsafe_allow_html=True)
+# --- GANESHJI CENTER IMAGE ---
+st.markdown('<div class="center-image">', unsafe_allow_html=True)
 st.image("photos/god.png", width=120)
 st.markdown('</div>', unsafe_allow_html=True)
 
+# --- HEADER ---
 st.title("💍 Maulik & Riddhi")
 st.subheader("We're Getting Married!")
 st.write("**📅 Save the Date: June 2, 2025**")
@@ -34,7 +60,7 @@ wedding_date = datetime(2025, 6, 2)
 days_left = (wedding_date - datetime.now()).days
 st.markdown(f"### 🕰️ Countdown: {days_left} days to go!")
 
-# --- LOVE STORY TIMELINE ---
+# --- LOVE STORY ---
 st.header("💖 Our Love Story")
 timeline = [
     ("2024 - Nov", "👀 We met for the first time — a simple hello turned into endless conversations."),
@@ -64,7 +90,7 @@ st.write("""
 - **Location**: Veraval, Gujarat
 """)
 
-# --- VENUE MAP ---
+# --- MAP ---
 st.header("📍 Venue Location")
 st.components.v1.html("""
 <iframe
@@ -73,18 +99,18 @@ st.components.v1.html("""
 </iframe>
 """, height=400)
 
-# --- GOOGLE MAP DIRECTIONS LINK ---
+# --- DIRECTION LINK ---
 st.markdown("### 🧭 Want Directions?")
 st.markdown(
     "[Click here to get directions in Google Maps](https://www.google.com/maps/dir/?api=1&destination=Visawadia+Ni+Vandi,+W989%2B8P5,+Station+Rd,+Rayon+Housing+Society,+Jobanpura,+Veraval,+Gujarat+362265,+India)",
     unsafe_allow_html=True
 )
 
-# --- GARBHA YOUTUBE EMBED ---
+# --- YOUTUBE MUSIC ---
 st.header("🎶 Let's Celebrate with Garba Vibes!")
-st.video("https://www.youtube.com/watch?v=-BI7m-S-TuY")  # Example Garba song
+st.video("https://www.youtube.com/watch?v=-BI7m-S-TuY")
 
-# --- RSVP FORM ---
+# --- RSVP ---
 st.header("📝 RSVP")
 name = st.text_input("Your Name")
 guests = st.number_input("Guests (including you)", min_value=1, max_value=10)
