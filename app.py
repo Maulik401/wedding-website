@@ -130,15 +130,23 @@ st.markdown(
     }}
 
     .center-img {{
-        display: flex;
-        justify-content: center;
-        margin-top: -90px;
-        margin-bottom: 10px;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        z-index: 5;
+        opacity: 0.9;
+        pointer-events: none;
     }}
 
     @media (max-width: 768px) {{
         .corner-img {{
             width: 50px;
+        }}
+
+        .center-img {{
+            width: 80px;
         }}
     }}
     </style>
@@ -156,4 +164,3 @@ st.markdown(
     </div>
     """,
     unsafe_allow_html=True
-)
