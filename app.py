@@ -133,9 +133,6 @@ days_left = (wedding_date - datetime.now()).days
 st.markdown(f"<div class='countdown-text'>⏳ Countdown: {days_left} days to go!</div>", unsafe_allow_html=True)
 
 
-# Display Countdown
-st.markdown(f"<div class='countdown-text'>⏳ Countdown: {days_left} days to go!</div>", unsafe_allow_html=True)
-
 
 # --- Love Story Timeline ---
 st.header("Our Love Story")
