@@ -108,7 +108,7 @@ if st.button("Submit RSVP"):
 #To embed a YouTube video in Streamlit:
 st.header("🎶 Let's Celebrate with Garba Vibes!")
 
-st.video("https://www.youtube.com/watch?v=kcK6xMeNwJ4")  # Example: popular garba song
+st.video("https://www.youtube.com/watch?v=-BI7m-S-TuY")  # Example: popular garba song
 
 
 # --- FOOTER ---
