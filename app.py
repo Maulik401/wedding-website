@@ -29,7 +29,7 @@ st.markdown(
         position: fixed;
         width: 90px;
         max-width: 20vw;
-        z-index: 1000;
+        z-index: 2000;
         opacity: 0.95;
     }}
 
