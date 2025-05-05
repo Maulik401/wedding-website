@@ -6,48 +6,57 @@ import base64
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Maulik & Riddhi's Wedding", page_icon="💍", layout="centered")
 
-# --- BASE64 UTILITY FUNCTION ---
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+# --- BASE64 ENCODER ---
+def get_base64(path):
+    with open(path, 'rb') as f:
+        return base64.b64encode(f.read()).decode()
 
-# --- LOAD CORNER IMAGES ---
-left_img = get_base64_of_bin_file("photos/drum-left.png")
-right_img = get_base64_of_bin_file("photos/drum-right.png")
-
-# --- BACKGROUND AND CORNER IMAGES ---
-st.markdown(f"""
+# --- BACKGROUND IMAGE ---
+bg_image = get_base64("photos/drum-pattern-bg.jpg")
+st.markdown(
+    f"""
     <style>
     .stApp {{
-        background-image: url("photos/drum-pattern-bg.jpg");
+        background-image: url("data:image/jpg;base64,{bg_image}");
         background-size: cover;
-        background-repeat: no-repeat;
         background-attachment: fixed;
+        background-repeat: no-repeat;
         background-position: center;
+        padding-top: 150px;
     }}
-    .corner-image {{
+    .corner-img {{
         position: fixed;
-        width: 100px;
-        z-index: 100;
+        width: 120px;
+        z-index: 999;
     }}
-    .top-left {{
-        top: 10px;
-        left: 10px;
+    .left-img {{
+        top: 20px;
+        left: 20px;
     }}
-    .top-right {{
-        top: 10px;
-        right: 10px;
+    .right-img {{
+        top: 20px;
+        right: 20px;
+    }}
+    .center-img {{
+        display: flex;
+        justify-content: center;
+        margin-top: -100px;
+        margin-bottom: 10px;
     }}
     </style>
+    """,
+    unsafe_allow_html=True
+)
 
-    <img src="data:image/png;base64,{left_img}" class="corner-image top-left">
-    <img src="data:image/png;base64,{right_img}" class="corner-image top-right">
-""", unsafe_allow_html=True)
+# --- CORNER DRUMS ---
+left = get_base64("photos/drum-left.png")
+right = get_base64("photos/drum-right.png")
+st.markdown(f'<img src="data:image/png;base64,{left}" class="corner-img left-img">', unsafe_allow_html=True)
+st.markdown(f'<img src="data:image/png;base64,{right}" class="corner-img right-img">', unsafe_allow_html=True)
 
-# --- GANESHJI CENTER IMAGE ---
-st.markdown('<div style="display:flex; justify-content:center; margin-top: -20px; margin-bottom: 10px;">', unsafe_allow_html=True)
-st.image("photos/god.png", width=120)
+# --- CENTER GANESHJI ---
+st.markdown('<div class="center-img">', unsafe_allow_html=True)
+st.image("photos/god.png", width=130)
 st.markdown('</div>', unsafe_allow_html=True)
 
 # --- HEADER ---
@@ -60,7 +69,7 @@ wedding_date = datetime(2025, 6, 2)
 days_left = (wedding_date - datetime.now()).days
 st.markdown(f"### ⏳ Countdown: {days_left} days to go!")
 
-# --- LOVE STORY TIMELINE ---
+# --- LOVE STORY ---
 st.header("📖 Our Love Story")
 timeline = [
     ("2024 - Nov", "👀 We met for the first time — a simple hello turned into endless conversations."),
@@ -101,7 +110,7 @@ st.components.v1.html("""
 
 st.markdown("### 🧭 [Click here to get directions](https://www.google.com/maps/dir/?api=1&destination=Visawadia+Ni+Vandi,+W989%2B8P5,+Station+Rd,+Rayon+Housing+Society,+Jobanpura,+Veraval,+Gujarat+362265,+India)")
 
-# --- YOUTUBE MUSIC EMBED ---
+# --- YOUTUBE GARBA ---
 st.header("🎶 Let's Celebrate with Garba Vibes!")
 st.video("https://www.youtube.com/watch?v=-BI7m-S-TuY")
 
