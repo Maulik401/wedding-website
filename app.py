@@ -22,20 +22,31 @@ st.markdown(
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-position: center;
-        padding-top: 150px;
+        padding-top: 160px;
     }}
+
     .corner-img {{
         position: fixed;
-        width: 120px;
-        z-index: 999;
+        width: 90px;
+        max-width: 20vw;
+        z-index: 1000;
+        opacity: 0.95;
     }}
+
     .left-img {{
-        top: 20px;
-        left: 20px;
+        top: 30px;
+        left: 10px;
     }}
+
     .right-img {{
-        top: 20px;
-        right: 20px;
+        top: 30px;
+        right: 10px;
+    }}
+
+    @media (max-width: 768px) {{
+        .corner-img {{
+            width: 60px;
+        }}
     }}
     .center-img {{
         display: flex;
