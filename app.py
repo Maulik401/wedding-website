@@ -145,7 +145,7 @@ st.markdown(f"<div class='countdown-text'>⏳ Countdown: {days_left} days to go!
 # --- Love Story Timeline ---
 st.markdown("<div class='custom-section-header'>Our Love Story</div>", unsafe_allow_html=True)
 timeline = [
-    ("2023 - Oct", "👀 We met for the first time — a simple hello turned into endless conversations."),
+    ("11/24/2023, 1:40:56 AM CST", "👀 We met for the first time — a simple hello turned into endless conversations."),
     ("2024 - June", "❤️ We started dating — our bond grew stronger with every passing day."),
     ("2025 - May", "💍 We got engaged — surrounded by love, family, and a thousand happy tears."),
     ("2025 - June 2nd", "💒 We're getting married — and you're invited to be part of it!")
