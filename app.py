@@ -30,16 +30,60 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# --- Header (with margin to bring title slightly lower) --- 
+# --- Header (with margin to bring title slightly lower and center it) --- 
 st.markdown("<div style='margin-top: 160px;'></div>", unsafe_allow_html=True)  # Adjust the top margin here
-st.title("Maulik & Riddhi")
-st.subheader("We're Getting Married!")
-st.write("**Save the Date: June 2, 2025**")
+
+# Custom CSS for centering the title and subheader
+st.markdown("""
+    <style>
+        .stTitle {
+            text-align: center;
+            font-family: 'Georgia', serif;
+            color: #8b008b;  /* You can adjust the color */
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .stSubheader {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: #ff6347;  /* You can adjust the color */
+            font-size: 1.5rem;
+        }
+        .stWrite {
+            text-align: center;
+            font-size: 1.25rem;
+            font-family: 'Verdana', sans-serif;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# Title and Subheader
+st.markdown("<h1 class='stTitle'>Maulik & Riddhi</h1>", unsafe_allow_html=True)
+st.markdown("<h2 class='stSubheader'>We're Getting Married!</h2>", unsafe_allow_html=True)
+st.markdown("<p class='stWrite'>**Save the Date: June 2, 2025**</p>", unsafe_allow_html=True)
+
 
 # --- Countdown ---
 wedding_date = datetime(2025, 6, 2)
 days_left = (wedding_date - datetime.now()).days
-st.markdown(f"### Countdown: {days_left} days to go!")
+
+# Custom CSS for fancy centered countdown
+st.markdown("""
+    <style>
+        .countdown-text {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', sans-serif;
+            color: #e91e63;  /* Stylish pink */
+            margin-top: 20px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# Display Countdown
+st.markdown(f"<div class='countdown-text'>⏳ Countdown: {days_left} days to go!</div>", unsafe_allow_html=True)
+
 
 # --- Love Story Timeline ---
 st.header("Our Love Story")
