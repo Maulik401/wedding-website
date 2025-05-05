@@ -17,27 +17,27 @@ st.markdown(
         height: 100vh;  /* Set the height to cover the entire viewport */
     }
 
-    /* Add corner images */
+    /* Add corner images at the top */
     .left-corner {
         position: absolute;
-        top: 10%;
+        top: 0%;
         left: 5%;
         width: 150px;
         z-index: 2;  /* Ensures the images appear on top */
     }
-    
+
     .right-corner {
         position: absolute;
-        top: 10%;
+        top: 0%;
         right: 5%;
         width: 150px;
         z-index: 2;  /* Ensures the images appear on top */
     }
 
-    /* Add center image */
+    /* Add center image (God image) */
     .center-image {
         position: absolute;
-        top: 30%;
+        top: 10%;  /* Positioned slightly below the top to avoid overlap */
         left: 50%;
         transform: translateX(-50%);
         width: 250px;
