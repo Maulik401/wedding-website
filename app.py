@@ -30,7 +30,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# --- Header --- 
+# --- Header (with margin to bring title slightly lower) --- 
+st.markdown("<div style='margin-top: 160px;'></div>", unsafe_allow_html=True)  # Adjust the top margin here
 st.title("Maulik & Riddhi")
 st.subheader("We're Getting Married!")
 st.write("**Save the Date: June 2, 2025**")
