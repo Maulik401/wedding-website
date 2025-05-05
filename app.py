@@ -36,26 +36,106 @@ st.markdown("<div style='margin-top: 160px;'></div>", unsafe_allow_html=True)  #
 # Custom CSS for centering the title and subheader
 st.markdown("""
     <style>
+        .stApp {
+            background-image: url("data:image/jpg;base64,""" + bg_image + """);
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: top center;
+            padding-top: 140px;
+            color: #4B0082;
+        }
+
         .stTitle {
             text-align: center;
             font-family: 'Georgia', serif;
-            color: #8b008b;  /* You can adjust the color */
+            color: #b30059;
             font-size: 3rem;
             font-weight: bold;
+            text-shadow: 2px 2px 5px #ffccff;
         }
+
         .stSubheader {
             text-align: center;
-            font-family: 'Arial', sans-serif;
-            color: #ff6347;  /* You can adjust the color */
-            font-size: 1.5rem;
+            font-family: 'Brush Script MT', cursive;
+            color: #cc0066;
+            font-size: 2rem;
+            margin-top: 0.5em;
         }
+
         .stWrite {
             text-align: center;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-family: 'Verdana', sans-serif;
+            color: #804000;
+        }
+
+        .countdown-text {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', sans-serif;
+            color: #d41f7c;
+            margin-top: 20px;
+            text-shadow: 1px 1px 3px #fff0f5;
+        }
+
+        h1, h2, h3, .stHeader {
+            color: #8B0000;
+        }
+
+        .stCaption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #663300;
+            font-style: italic;
+        }
+
+        .relative-container {
+            position: relative;
+        }
+
+        .corner-img {
+            position: absolute;
+            width: 80px;
+            z-index: 10;
+            opacity: 0.9;
+            pointer-events: none;
+        }
+
+        .left-img {
+            top: 0;
+            left: 0;
+        }
+
+        .right-img {
+            top: 0;
+            right: 0;
+        }
+
+        .center-img {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            z-index: 5;
+            opacity: 0.9;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .corner-img {
+                width: 50px;
+            }
+
+            .center-img {
+                width: 80px;
+            }
         }
     </style>
 """, unsafe_allow_html=True)
+
 
 # Title and Subheader
 st.markdown("<h1 class='stTitle'>Maulik & Riddhi</h1>", unsafe_allow_html=True)
@@ -66,20 +146,6 @@ st.markdown("<p class='stWrite'>**Save the Date: June 2, 2025**</p>", unsafe_all
 # --- Countdown ---
 wedding_date = datetime(2025, 6, 2)
 days_left = (wedding_date - datetime.now()).days
-
-# Custom CSS for fancy centered countdown
-st.markdown("""
-    <style>
-        .countdown-text {
-            text-align: center;
-            font-size: 1.8rem;
-            font-weight: bold;
-            font-family: 'Trebuchet MS', sans-serif;
-            color: #e91e63;  /* Stylish pink */
-            margin-top: 20px;
-        }
-    </style>
-""", unsafe_allow_html=True)
 
 # Display Countdown
 st.markdown(f"<div class='countdown-text'>⏳ Countdown: {days_left} days to go!</div>", unsafe_allow_html=True)
