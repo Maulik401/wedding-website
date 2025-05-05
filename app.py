@@ -122,15 +122,16 @@ st.markdown(f"""
 
 
 
-# Title and Subheader
-st.markdown("<h1 class='stTitle'>Maulik & Riddhi</h1>", unsafe_allow_html=True)
-st.markdown("<h2 class='stSubheader'>We're Getting Married!</h2>", unsafe_allow_html=True)
-st.markdown("<p class='stWrite'>**Save the Date: June 2, 2025**</p>", unsafe_allow_html=True)
-
+# --- Title and Countdown Section (Centered and Styled) ---
+st.markdown("<div class='custom-title'>Maulik & Riddhi</div>", unsafe_allow_html=True)
+st.markdown("<div class='custom-subheader'>We're Getting Married!</div>", unsafe_allow_html=True)
+st.markdown("<div class='custom-save'>Save the Date: June 2, 2025</div>", unsafe_allow_html=True)
 
 # --- Countdown ---
 wedding_date = datetime(2025, 6, 2)
 days_left = (wedding_date - datetime.now()).days
+st.markdown(f"<div class='countdown-text'>⏳ Countdown: {days_left} days to go!</div>", unsafe_allow_html=True)
+
 
 # Display Countdown
 st.markdown(f"<div class='countdown-text'>⏳ Countdown: {days_left} days to go!</div>", unsafe_allow_html=True)
