@@ -21,7 +21,7 @@ st.markdown(
 
 st.components.v1.html("""
 <div style="text-align:center; margin-bottom: 10px;">
-  <audio id="bgmusic" autoplay loop>
+  <audio id="bgmusic" autoplay loop muted>
     <source src="https://paglasongs.com/files/download/id/13597" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
