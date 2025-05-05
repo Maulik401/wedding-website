@@ -22,36 +22,38 @@ st.markdown(
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-position: center;
-        padding-top: 160px;
+        padding-top: 140px;
     }}
 
     .corner-img {{
         position: fixed;
-        width: 90px;
-        max-width: 20vw;
-        z-index: 9000;
-        opacity: 0.95;
+        width: 70px;
+        max-width: 15vw;
+        z-index: 9999;
+        opacity: 0.9;
+        pointer-events: none;
     }}
 
     .left-img {{
-        top: 30px;
-        left: 10px;
+        top: 20px;
+        left: 20px;
     }}
 
     .right-img {{
-        top: 30px;
-        right: 10px;
+        top: 20px;
+        right: 20px;
     }}
 
     @media (max-width: 768px) {{
         .corner-img {{
-            width: 60px;
+            width: 50px;
         }}
     }}
+
     .center-img {{
         display: flex;
         justify-content: center;
-        margin-top: -100px;
+        margin-top: -90px;
         margin-bottom: 10px;
     }}
     </style>
