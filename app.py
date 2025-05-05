@@ -129,4 +129,31 @@ st.markdown(
         right: 0;
     }}
 
-    .center-img
+    .center-img {{
+        display: flex;
+        justify-content: center;
+        margin-top: -90px;
+        margin-bottom: 10px;
+    }}
+
+    @media (max-width: 768px) {{
+        .corner-img {{
+            width: 50px;
+        }}
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Adding corner and center images
+st.markdown(
+    f"""
+    <div class="relative-container">
+        <img src="data:image/png;base64,{left_corner}" class="corner-img left-img">
+        <img src="data:image/png;base64,{right_corner}" class="corner-img right-img">
+        <img src="data:image/png;base64,{center_image}" class="center-img">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
