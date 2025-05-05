@@ -181,7 +181,7 @@ st.components.v1.html("""
 </iframe>
 """, height=400)
 
-# Eye-catching Directions button with lighter background, smaller size, and front map preview
+# Eye-catching Directions button with custom map image
 st.markdown("### 📍 Want Directions?")
 st.markdown(
     """
@@ -234,11 +234,13 @@ st.markdown(
             🧭 Get Directions on Google Maps
         </a>
         <br>
-        <img src="https://maps.googleapis.com/maps/api/staticmap?center=20.910310,70.361961&zoom=14&size=600x300&markers=color:red|20.910310,70.361961" class="directions-image" alt="Map Preview">
+        <!-- Use the image URL of the map you find here -->
+        <img src="https://www.gstatic.com/marketing-cms/assets/images/0f/9a/58f1d92b46069b4a8bdc556b612c/google-maps.webp=s96-fcrop64=1,00000000ffffffff-rw" class="directions-image" alt="Map Preview">
     </div>
     """,
     unsafe_allow_html=True
 )
+
 
 
 
