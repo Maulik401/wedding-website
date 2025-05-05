@@ -181,66 +181,12 @@ st.components.v1.html("""
 </iframe>
 """, height=400)
 
-# Eye-catching Directions button with custom map image
+# Directions button (clickable)
 st.markdown("### 📍 Want Directions?")
 st.markdown(
-    """
-    <style>
-        .directions-container {
-            text-align: center;
-            background-color: #ffeb3b;  /* Lighter yellow */
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .directions-container:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .directions-container a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.2rem;
-            font-weight: bold;
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #f44336;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-        }
-
-        .directions-container a:hover {
-            background-color: #d32f2f;
-        }
-
-        .directions-image {
-            width: 100%;
-            max-width: 400px;  /* Smaller size for map preview */
-            border-radius: 8px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
-
-    <div class="directions-container">
-        <a href="https://www.google.com/maps/dir/?api=1&destination=Visawadia+Ni+Vandi,+W989%2B8P5,+Station+Rd,+Rayon+Housing+Society,+Jobanpura,+Veraval,+Gujarat+362265,+India" target="_blank">
-            🧭 Get Directions on Google Maps
-        </a>
-        <br>
-        <!-- Use the image URL of the map you find here -->
-        <img src="https://www.gstatic.com/marketing-cms/assets/images/0f/9a/58f1d92b46069b4a8bdc556b612c/google-maps.webp=s96-fcrop64=1,00000000ffffffff-rw" class="directions-image" alt="Map Preview">
-    </div>
-    """,
+    "[🧭 Click here to open in Google Maps and get directions](https://www.google.com/maps/dir/?api=1&destination=Visawadia+Ni+Vandi,+W989%2B8P5,+Station+Rd,+Rayon+Housing+Society,+Jobanpura,+Veraval,+Gujarat+362265,+India)",
     unsafe_allow_html=True
 )
-
 
 
 
