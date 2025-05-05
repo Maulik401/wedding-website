@@ -181,12 +181,61 @@ st.components.v1.html("""
 </iframe>
 """, height=400)
 
-# Directions button (clickable)
+# Eye-catching Directions button with hover effect and map preview
 st.markdown("### 📍 Want Directions?")
 st.markdown(
-    "[🧭 Click here to open in Google Maps and get directions](https://www.google.com/maps/dir/?api=1&destination=Visawadia+Ni+Vandi,+W989%2B8P5,+Station+Rd,+Rayon+Housing+Society,+Jobanpura,+Veraval,+Gujarat+362265,+India)",
+    """
+    <style>
+        .directions-container {
+            text-align: center;
+            background-color: #ffeb3b;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .directions-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .directions-container a {
+            text-decoration: none;
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f44336;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .directions-container a:hover {
+            background-color: #d32f2f;
+        }
+
+        .directions-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+
+    <div class="directions-container">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Visawadia+Ni+Vandi,+W989%2B8P5,+Station+Rd,+Rayon+Housing+Society,+Jobanpura,+Veraval,+Gujarat+362265,+India" target="_blank">
+            🧭 Get Directions on Google Maps
+        </a>
+        <br>
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=20.910310,70.361961&zoom=14&size=600x300&markers=color:red|20.910310,70.361961" class="directions-image" alt="Map Preview">
+    </div>
+    """,
     unsafe_allow_html=True
 )
+
 
 
 # --- RSVP FORM (No backend, just a thank-you message) ---
