@@ -136,9 +136,9 @@ center_image = "photos/god_image.png"  # Image for the center (God)
 # Add the images to the page
 st.markdown(
     f"""
-    <img class="left-corner" src="{left_corner}" alt="Left Drum Image">
-    <img class="right-corner" src="{right_corner}" alt="Right Drum Image">
-    <img class="center-image" src="{center_image}" alt="God Image">
+    <img class="left-corner" src="photos/left_drum.png" alt="Left Drum Image">
+    <img class="right-corner" src="photos/right_drum.png" alt="Right Drum Image">
+    <img class="center-image" src="photos/god_image.png" alt="God Image">
     """,
     unsafe_allow_html=True
 )
