@@ -181,19 +181,22 @@ st.components.v1.html("""
 </iframe>
 """, height=400)
 
-# Eye-catching Directions button with hover effect and map preview
+# Eye-catching Directions button with lighter background, smaller size, and front map preview
 st.markdown("### 📍 Want Directions?")
 st.markdown(
     """
     <style>
         .directions-container {
             text-align: center;
-            background-color: #ffeb3b;
-            padding: 20px;
-            border-radius: 10px;
+            background-color: #ffeb3b;  /* Lighter yellow */
+            padding: 15px;
+            border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .directions-container:hover {
@@ -203,7 +206,7 @@ st.markdown(
 
         .directions-container a {
             text-decoration: none;
-            color: #000;
+            color: #fff;
             font-size: 1.2rem;
             font-weight: bold;
             display: inline-block;
@@ -219,9 +222,10 @@ st.markdown(
 
         .directions-image {
             width: 100%;
-            max-width: 600px;
+            max-width: 400px;  /* Smaller size for map preview */
             border-radius: 8px;
             margin-top: 10px;
+            margin-bottom: 10px;
         }
     </style>
 
