@@ -103,7 +103,7 @@ st.markdown(
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: top center;  /* Adjusting position to show the upper part of the image */
         padding-top: 140px;
     }}
 
