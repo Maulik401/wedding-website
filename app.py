@@ -1,68 +1,34 @@
 import streamlit as st
 from datetime import datetime
+from PIL import Image
+import base64
+import io
+
+# --- Helper function to load images as base64 ---
+def load_base64(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+# Load images as base64
+left_corner = load_base64("photos/left_drum.png")
+right_corner = load_base64("photos/right_drum.png")
+bg_image = load_base64("photos/background.jpg")
+center_image = load_base64("photos/god_image.png")
 
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Maulik & Riddhi's Wedding", page_icon="💍", layout="centered")
 
-# --- Custom CSS to add background and corner images ---
-st.markdown(
-    """
-    <style>
-    .main {
-        background-image: url('photos/background.jpg');  /* Background image */
-        background-size: cover;  /* Ensures the image covers the entire page */
-        background-position: center;  /* Keeps the image centered */
-        background-repeat: no-repeat;
-        position: relative;
-        height: 100vh;  /* Set the height to cover the entire viewport */
-    }
-
-    /* Add corner images */
-    .left-corner {
-        position: absolute;
-        top: 10%;
-        left: 5%;
-        width: 150px;
-        z-index: 2;  /* Ensures the images appear on top */
-    }
-    
-    .right-corner {
-        position: absolute;
-        top: 10%;
-        right: 5%;
-        width: 150px;
-        z-index: 2;  /* Ensures the images appear on top */
-    }
-
-    /* Add center image */
-    .center-image {
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 250px;
-        z-index: 2;  /* Ensures the image appears on top */
-    }
-
-    /* Add padding to content */
-    .stApp {
-        padding-top: 150px;  /* Adjust the padding to give space to the background image */
-    }
-    </style>
-    """, unsafe_allow_html=True
-)
-
-# --- HEADER ---
+# --- Header --- 
 st.title("Maulik & Riddhi")
 st.subheader("We're Getting Married!")
 st.write("**Save the Date: June 2, 2025**")
 
-# --- COUNTDOWN ---
+# --- Countdown ---
 wedding_date = datetime(2025, 6, 2)
 days_left = (wedding_date - datetime.now()).days
 st.markdown(f"### Countdown: {days_left} days to go!")
 
-# --- LOVE STORY TIMELINE ---
+# --- Love Story Timeline ---
 st.header("Our Love Story")
 timeline = [
     ("2024 - Nov", "👀 We met for the first time — a simple hello turned into endless conversations."),
@@ -73,7 +39,7 @@ timeline = [
 for year, event in timeline:
     st.markdown(f"**{year}**  \n{event}")
 
-# --- PHOTO GALLERY ---
+# --- Photo Gallery ---
 st.header("Photo Gallery")
 st.image(
     [
@@ -85,14 +51,14 @@ st.image(
     caption=["Engagement Day", "Pre-Wedding Shoot", "Forever Together"]
 )
 
-# --- SCHEDULE ---
+# --- Schedule ---
 st.header("Schedule")
 st.write("""
-- **Wedding Ceremony**: June 2, 2025 @ 9:00 AM   
+- **Wedding Ceremony**: June 2, 2025 @ 9:00 AM  
 - **Location**: Veraval, Gujarat
 """)
 
-# --- VENUE MAP ---
+# --- Venue Map ---
 st.header("Venue Location")
 st.components.v1.html("""
 <iframe
@@ -108,7 +74,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# --- RSVP FORM ---
+# --- RSVP FORM (No backend, just a thank-you message) ---
 st.header("RSVP")
 name = st.text_input("Your Name")
 guests = st.number_input("Guests (including you)", min_value=1, max_value=10)
@@ -120,25 +86,72 @@ if st.button("Submit RSVP"):
     else:
         st.warning("Please enter your name.")
 
-# --- EMBEDDED YOUTUBE VIDEO (Garba music) ---
+# --- YouTube Video for Garba ---
 st.header("🎶 Let's Celebrate with Garba Vibes!")
 st.video("https://www.youtube.com/watch?v=-BI7m-S-TuY")  # Example: popular garba song
 
-# --- FOOTER ---
+# --- Footer ---
 st.markdown("---")
 st.caption("🌸 With love, Maulik & Riddhi | Made with ❤️ in Gujarat 🌸")
 
-# --- CORNER IMAGES (drums) ---
-left_corner = "photos/left_drum.png"  # Ensure the image is in the photos/ folder
-right_corner = "photos/right_drum.png"  # Ensure the image is in the photos/ folder
-center_image = "photos/god_image.png"  # Image for the center (God)
-
-# Add the images to the page
+# --- Add Background and Corner Images ---
 st.markdown(
     f"""
-    <img class="left-corner" src="{left_corner}" alt="Left Drum Image">
-    <img class="right-corner" src="{right_corner}" alt="Right Drum Image">
-    <img class="center-image" src="{center_image}" alt="God Image">
+    <style>
+    .stApp {{
+        background-image: url("data:image/jpg;base64,{bg_image}");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-top: 140px;
+    }}
+
+    .relative-container {{
+        position: relative;
+    }}
+
+    .corner-img {{
+        position: absolute;
+        width: 80px;
+        z-index: 10;
+        opacity: 0.9;
+        pointer-events: none;
+    }}
+
+    .left-img {{
+        top: 0;
+        left: 0;
+    }}
+
+    .right-img {{
+        top: 0;
+        right: 0;
+    }}
+
+    .center-img {{
+        display: flex;
+        justify-content: center;
+        margin-top: -90px;
+        margin-bottom: 10px;
+    }}
+
+    @media (max-width: 768px) {{
+        .corner-img {{
+            width: 50px;
+        }}
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    f"""
+    <div class="relative-container">
+        <img src="data:image/png;base64,{left_corner}" class="corner-img left-img">
+        <img src="data:image/png;base64,{right_corner}" class="corner-img right-img">
+    </div>
     """,
     unsafe_allow_html=True
 )
