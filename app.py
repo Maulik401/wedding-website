@@ -18,6 +18,18 @@ center_image = load_base64("photos/god_image.png")
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Maulik & Riddhi's Wedding", page_icon="💍", layout="centered")
 
+# --- Add Corner and Center Images (Moved to the Top) ---
+st.markdown(
+    f"""
+    <div class="relative-container">
+        <img src="data:image/png;base64,{left_corner}" class="corner-img left-img">
+        <img src="data:image/png;base64,{right_corner}" class="corner-img right-img">
+        <img src="data:image/png;base64,{center_image}" class="center-img">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 # --- Header --- 
 st.title("Maulik & Riddhi")
 st.subheader("We're Getting Married!")
@@ -150,18 +162,6 @@ st.markdown(
         }}
     }}
     </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# Adding corner and center images
-st.markdown(
-    f"""
-    <div class="relative-container">
-        <img src="data:image/png;base64,{left_corner}" class="corner-img left-img">
-        <img src="data:image/png;base64,{right_corner}" class="corner-img right-img">
-        <img src="data:image/png;base64,{center_image}" class="center-img">
-    </div>
     """,
     unsafe_allow_html=True
 )
