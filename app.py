@@ -34,86 +34,32 @@ st.markdown(
 st.markdown("<div style='margin-top: 160px;'></div>", unsafe_allow_html=True)  # Adjust the top margin here
 
 # Custom CSS for centering the title and subheader
-st.markdown("""
+st.markdown(f"""
     <style>
-        .stApp {
-            background-image: url("data:image/jpg;base64,""" + bg_image + """);
+        /* Full page background */
+        .stApp {{
+            background-image: url("data:image/jpg;base64,{bg_image}");
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-position: top center;
-            padding-top: 140px;
-            color: #4B0082;
-        }
+            padding-top: 150px;
+        }}
 
-        .stTitle {
-            text-align: center;
-            font-family: 'Georgia', serif;
-            color: #b30059;
-            font-size: 3rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 5px #ffccff;
-        }
-
-        .stSubheader {
-            text-align: center;
-            font-family: 'Brush Script MT', cursive;
-            color: #cc0066;
-            font-size: 2rem;
-            margin-top: 0.5em;
-        }
-
-        .stWrite {
-            text-align: center;
-            font-size: 1.3rem;
-            font-family: 'Verdana', sans-serif;
-            color: #804000;
-        }
-
-        .countdown-text {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
-            font-family: 'Trebuchet MS', sans-serif;
-            color: #d41f7c;
-            margin-top: 20px;
-            text-shadow: 1px 1px 3px #fff0f5;
-        }
-
-        h1, h2, h3, .stHeader {
-            color: #8B0000;
-        }
-
-        .stCaption {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #663300;
-            font-style: italic;
-        }
-
-        .relative-container {
+        /* Center image styles (already in your code) */
+        .relative-container {{
             position: relative;
-        }
-
-        .corner-img {
+        }}
+        .corner-img {{
             position: absolute;
             width: 80px;
             z-index: 10;
             opacity: 0.9;
             pointer-events: none;
-        }
-
-        .left-img {
-            top: 0;
-            left: 0;
-        }
-
-        .right-img {
-            top: 0;
-            right: 0;
-        }
-
-        .center-img {
+        }}
+        .left-img {{ top: 0; left: 0; }}
+        .right-img {{ top: 0; right: 0; }}
+        .center-img {{
             position: absolute;
             top: 20%;
             left: 50%;
@@ -122,19 +68,58 @@ st.markdown("""
             z-index: 5;
             opacity: 0.9;
             pointer-events: none;
-        }
+        }}
 
-        @media (max-width: 768px) {
-            .corner-img {
-                width: 50px;
-            }
+        /* Title */
+        .custom-title {{
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            font-weight: bold;
+            color: #d4006d;
+            text-shadow: 3px 3px 6px #fff0f5;
+            margin-bottom: 0.5rem;
+        }}
 
-            .center-img {
-                width: 80px;
-            }
-        }
+        /* Subheader */
+        .custom-subheader {{
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: #ff1493;
+            margin-bottom: 0.2rem;
+        }}
+
+        /* Save the Date */
+        .custom-save {{
+            text-align: center;
+            font-size: 1.75rem;
+            color: #b5651d;
+            font-family: 'Verdana', sans-serif;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }}
+
+        /* Countdown */
+        .countdown-text {{
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', sans-serif;
+            color: #e91e63;
+            text-shadow: 1px 1px 4px #fff0f5;
+            margin-top: 30px;
+        }}
+
+        @media (max-width: 768px) {{
+            .custom-title {{ font-size: 2.5rem; }}
+            .custom-subheader {{ font-size: 1.8rem; }}
+            .custom-save {{ font-size: 1.4rem; }}
+            .countdown-text {{ font-size: 1.5rem; }}
+        }}
     </style>
 """, unsafe_allow_html=True)
+
 
 
 # Title and Subheader
