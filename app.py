@@ -1,16 +1,30 @@
 import streamlit as st
 from datetime import datetime
 
+import streamlit as st
+from datetime import datetime
+
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Maulik & Riddhi's Wedding", page_icon="💍", layout="centered")
 
-# --- BACKGROUND MUSIC (hosted online) ---
-st.markdown("""
-<audio autoplay loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-Your browser does not support the audio element.
-</audio>
-""", unsafe_allow_html=True)
+# --- MUSIC PLAYER WITH MUTE BUTTON ---
+st.components.v1.html("""
+<div style="text-align:center; margin-bottom: 10px;">
+  <audio id="bgmusic" autoplay loop>
+    <source src="https://paglasongs.com/files/download/id/13597" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  <button onclick="toggleMute()" style="padding: 8px 16px; font-size: 16px; background-color: #ff4081; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    🔈 Mute/Unmute Music
+  </button>
+</div>
+<script>
+  function toggleMute() {
+    var audio = document.getElementById("bgmusic");
+    audio.muted = !audio.muted;
+  }
+</script>
+""", height=100)
 
 # --- HEADER ---
 st.markdown("<h1 style='text-align: center; color: #b30059;'>💍 Maulik & Riddhi 💍</h1>", unsafe_allow_html=True)
