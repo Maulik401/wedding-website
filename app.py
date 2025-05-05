@@ -105,6 +105,12 @@ if st.button("Submit RSVP"):
     else:
         st.warning("Please enter your name.")
 
+#To embed a YouTube video in Streamlit:
+st.header("🎶 Let's Celebrate with Garba Vibes!")
+
+st.video("https://www.youtube.com/watch?v=kcK6xMeNwJ4")  # Example: popular garba song
+
+
 # --- FOOTER ---
 st.markdown("---")
 st.caption("🌸 With love, Maulik & Riddhi | Made with ❤️ in Gujarat 🌸")
