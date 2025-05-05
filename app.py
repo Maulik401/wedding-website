@@ -4,63 +4,38 @@ from datetime import datetime
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Maulik & Riddhi's Wedding", page_icon="💍", layout="centered")
 
-# --- CUSTOM CSS FOR BACKGROUND & IMAGES ---
-st.markdown(
-    """
+# --- BACKGROUND COLOR (via CSS) ---
+st.markdown("""
     <style>
-    body {
-        background-color: #fdf6f0;
-    }
     .stApp {
-        background-image: url("photos/background.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-color: #fff8f0;
+        font-family: 'Segoe UI', sans-serif;
     }
-    .header-image {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 150px;
-        margin-top: 10px;
+    .center {
+        display: flex;
+        justify-content: center;
+        margin-top: -30px;
         margin-bottom: 20px;
     }
-    .corner-left {
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        width: 80px;
-        z-index: 1;
-    }
-    .corner-right {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        width: 80px;
-        z-index: 1;
-    }
     </style>
-    """,
-    unsafe_allow_html=True
-)
+""", unsafe_allow_html=True)
 
-# --- DECORATIVE IMAGES ---
-st.markdown('<img src="photos/drum-left.png" class="corner-left">', unsafe_allow_html=True)
-st.markdown('<img src="photos/drum-right.png" class="corner-right">', unsafe_allow_html=True)
-st.markdown('<img src="photos/god.png" class="header-image">', unsafe_allow_html=True)
+# --- HEADER & GANESHJI IMAGE ---
+st.markdown('<div class="center">', unsafe_allow_html=True)
+st.image("photos/god.png", width=120)
+st.markdown('</div>', unsafe_allow_html=True)
 
-# --- HEADER ---
 st.title("💍 Maulik & Riddhi")
 st.subheader("We're Getting Married!")
-st.write("**Save the Date: June 2, 2025**")
+st.write("**📅 Save the Date: June 2, 2025**")
 
 # --- COUNTDOWN ---
 wedding_date = datetime(2025, 6, 2)
 days_left = (wedding_date - datetime.now()).days
-st.markdown(f"### Countdown: {days_left} days to go!")
+st.markdown(f"### 🕰️ Countdown: {days_left} days to go!")
 
 # --- LOVE STORY TIMELINE ---
-st.header("Our Love Story 💖")
+st.header("💖 Our Love Story")
 timeline = [
     ("2024 - Nov", "👀 We met for the first time — a simple hello turned into endless conversations."),
     ("2025 - June", "❤️ We started dating — our bond grew stronger with every passing day."),
@@ -82,15 +57,11 @@ st.image(
     caption=["Engagement Day", "Pre-Wedding Shoot", "Forever Together"]
 )
 
-# --- MUSIC SECTION ---
-st.header("🎶 Let's Celebrate with Garba Vibes!")
-st.video("https://www.youtube.com/watch?v=-BI7m-S-TuY")  # Garba song (new)
-
 # --- SCHEDULE ---
-st.header("🗓️ Schedule")
+st.header("📅 Schedule")
 st.write("""
 - **Wedding Ceremony**: June 2, 2025 @ 9:00 AM  
-- **Location**: Visawadia Ni Vandi, Veraval, Gujarat
+- **Location**: Veraval, Gujarat
 """)
 
 # --- VENUE MAP ---
@@ -102,22 +73,26 @@ st.components.v1.html("""
 </iframe>
 """, height=400)
 
-# --- Directions Button ---
+# --- GOOGLE MAP DIRECTIONS LINK ---
 st.markdown("### 🧭 Want Directions?")
 st.markdown(
-    "[Click here to open in Google Maps and get directions 🚗](https://www.google.com/maps/dir/?api=1&destination=Visawadia+Ni+Vandi,+W989%2B8P5,+Station+Rd,+Rayon+Housing+Society,+Jobanpura,+Veraval,+Gujarat+362265,+India)",
+    "[Click here to get directions in Google Maps](https://www.google.com/maps/dir/?api=1&destination=Visawadia+Ni+Vandi,+W989%2B8P5,+Station+Rd,+Rayon+Housing+Society,+Jobanpura,+Veraval,+Gujarat+362265,+India)",
     unsafe_allow_html=True
 )
 
+# --- GARBHA YOUTUBE EMBED ---
+st.header("🎶 Let's Celebrate with Garba Vibes!")
+st.video("https://www.youtube.com/watch?v=-BI7m-S-TuY")  # Example Garba song
+
 # --- RSVP FORM ---
-st.header("💌 RSVP")
+st.header("📝 RSVP")
 name = st.text_input("Your Name")
 guests = st.number_input("Guests (including you)", min_value=1, max_value=10)
 attending = st.radio("Will you attend?", ["Yes", "No", "Maybe"])
 
 if st.button("Submit RSVP"):
     if name:
-        st.success("Thank you! Your RSVP has been received. 🎉")
+        st.success("Thank you! Your RSVP has been received. 💌")
     else:
         st.warning("Please enter your name.")
 
