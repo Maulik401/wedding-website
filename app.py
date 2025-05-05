@@ -181,16 +181,10 @@ st.components.v1.html("""
 </iframe>
 """, height=400)
 
-# Directions button with an eye-catching Google Map image
+# Directions button (clickable)
 st.markdown("### 📍 Want Directions?")
 st.markdown(
-    """
-    <a href="https://www.google.com/maps/dir/?api=1&destination=Visawadia+Ni+Vandi,+W989%2B8P5,+Station+Rd,+Rayon+Housing+Society,+Jobanpura,+Veraval,+Gujarat+362265,+India" target="_blank">
-        <img src="https://maps.googleapis.com/maps/api/staticmap?center=20.910310,70.361961&zoom=14&size=600x300&markers=color:red|20.910310,70.361961" alt="Google Maps Location" style="width: 100%; max-width: 600px; border-radius: 8px;">
-    </a>
-    <br>
-    [🧭 Click here to open in Google Maps and get directions](https://www.google.com/maps/dir/?api=1&destination=Visawadia+Ni+Vandi,+W989%2B8P5,+Station+Rd,+Rayon+Housing+Society,+Jobanpura,+Veraval,+Gujarat+362265,+India)
-    """,
+    "[🧭 Click here to open in Google Maps and get directions](https://www.google.com/maps/dir/?api=1&destination=Visawadia+Ni+Vandi,+W989%2B8P5,+Station+Rd,+Rayon+Housing+Society,+Jobanpura,+Veraval,+Gujarat+362265,+India)",
     unsafe_allow_html=True
 )
 
