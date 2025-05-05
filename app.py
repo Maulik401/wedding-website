@@ -17,27 +17,27 @@ st.markdown(
         height: 100vh;  /* Set the height to cover the entire viewport */
     }
 
-    /* Add corner images at the top */
+    /* Add corner images */
     .left-corner {
         position: absolute;
-        top: 0%;
+        top: 10%;
         left: 5%;
         width: 150px;
         z-index: 2;  /* Ensures the images appear on top */
     }
-
+    
     .right-corner {
         position: absolute;
-        top: 0%;
+        top: 10%;
         right: 5%;
         width: 150px;
         z-index: 2;  /* Ensures the images appear on top */
     }
 
-    /* Add center image (God image) */
+    /* Add center image */
     .center-image {
         position: absolute;
-        top: 10%;  /* Positioned slightly below the top to avoid overlap */
+        top: 30%;
         left: 50%;
         transform: translateX(-50%);
         width: 250px;
@@ -136,9 +136,9 @@ center_image = "photos/god_image.png"  # Image for the center (God)
 # Add the images to the page
 st.markdown(
     f"""
-    <img class="left-corner" src="photos/left_drum.png" alt="Left Drum Image">
-    <img class="right-corner" src="photos/right_drum.png" alt="Right Drum Image">
-    <img class="center-image" src="photos/god_image.png" alt="God Image">
+    <img class="left-corner" src="{left_corner}" alt="Left Drum Image">
+    <img class="right-corner" src="{right_corner}" alt="Right Drum Image">
+    <img class="center-image" src="{center_image}" alt="God Image">
     """,
     unsafe_allow_html=True
 )
