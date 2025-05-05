@@ -99,7 +99,7 @@ st.markdown(
     f"""
     <style>
     .stApp {{
-        background-image: url("data:image/jpg;base64,{bg_image}");
+        background-image: url("data:image/jpg;base64,{bg_image}");  /* Background Image */
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -129,29 +129,4 @@ st.markdown(
         right: 0;
     }}
 
-    .center-img {{
-        display: flex;
-        justify-content: center;
-        margin-top: -90px;
-        margin-bottom: 10px;
-    }}
-
-    @media (max-width: 768px) {{
-        .corner-img {{
-            width: 50px;
-        }}
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    f"""
-    <div class="relative-container">
-        <img src="data:image/png;base64,{left_corner}" class="corner-img left-img">
-        <img src="data:image/png;base64,{right_corner}" class="corner-img right-img">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+    .center-img
